@@ -26,3 +26,7 @@
 
 ### Output
 **RelativeOutputPath**: Path relative to running directory to place serials. Defaults to serials. Do not include leading or trailing slashes.
+
+### Todo
+- Add text support above and below
+- Fix visible intersection lines by treating contiguous boxes as one instead of each grid item as individual.
