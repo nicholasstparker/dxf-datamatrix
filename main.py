@@ -44,8 +44,7 @@ if __name__ == "__main__":
         encoded = encode(data)
         img = Image.frombytes('RGB', (encoded.width, encoded.height), encoded.pixels)
 
-        doc = ezdxf.new("R2018")
-        doc.units = units.MM
+        doc = ezdxf.new("R12")
         msp = doc.modelspace()
 
         for row in range(0, encoded.height, 5):
@@ -53,19 +52,15 @@ if __name__ == "__main__":
                 pixel = img.getpixel((col, row))
                 if pixel == black:
                     transformed_row = encoded.height - row
-                    points = [
-                        (col, transformed_row),
-                        (col + 5, transformed_row),
-                        (col + 5, transformed_row - 5),
-                        (col, transformed_row - 5),
-                        (col, transformed_row),
-                    ]
-                    msp.add_lwpolyline(points, close=True)
+                    msp.add_line((col, transformed_row), (col + 5, transformed_row))
+                    msp.add_line((col + 5, transformed_row), (col + 5, transformed_row - 5))
+                    msp.add_line((col + 5, transformed_row - 5), (col, transformed_row - 5))
+                    msp.add_line((col, transformed_row - 5), (col, transformed_row))
 
                     if hatching_enabled:
                         y = transformed_row - hatch_spacing
                         while y > transformed_row - 5:
-                            msp.add_lwpolyline([(col, y), (col + 5, y)])
+                            msp.add_line((col, y), (col + 5, y))
                             y -= hatch_spacing
 
         scale_factor = target_size / encoded.width
