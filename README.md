@@ -1,4 +1,4 @@
-![Sample datamatrix image.](/images/sample-datamatrix.png)
+![Sample datamatrix image.](/images/sample-barcode-engraved.JPG)
 
 ## Setup
 1. Clone this repo
