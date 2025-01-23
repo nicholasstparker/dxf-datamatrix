@@ -1,4 +1,4 @@
-![Sample datamatrix image.](/images/sample-barcode-engraved.JPG)
+<img src="/images/sample-barcode-engraved.JPG" width="480" alt="sample engraved barcode">
 
 ## Setup
 1. Clone this repo
