@@ -1,3 +1,5 @@
+![Sample datamatrix image.](/sample-datamatrix.png)
+
 ## Setup
 1. Clone this repo
 2. Open "settings.ini" and change any desired settings. See [here](#settings). for settings explanations. Be sure to save changes.
