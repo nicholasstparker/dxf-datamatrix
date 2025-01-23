@@ -27,6 +27,10 @@
 ### Output
 - **RelativeOutputPath**: Path relative to running directory to place serials. Defaults to serials. Do not include leading or trailing slashes.
 
-### Todo
+## How it Works
+dxf-datamatrix first creates the barcode as an image using Pillow. It then iterates over every 5 pixels (the width of a datamatrix "block") and uses Pillow's `getpixel()` function to determine its color. If it's filled in, we add 4 lines to the DXF, forming a box. Hatching and scaling are then applied. 
+
+## Todo
 - Add text support above and below
 - Fix visible intersection lines by treating contiguous boxes as one instead of each grid item as individual.
+- SVG to DXF conversion.
