@@ -1,4 +1,4 @@
-![Sample datamatrix image.](/sample-datamatrix.png)
+![Sample datamatrix image.](/images/sample-datamatrix.png)
 
 ## Setup
 1. Clone this repo
